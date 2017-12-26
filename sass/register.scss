@@ -1,0 +1,277 @@
+@charset "utf-8" ;
+body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend{
+    margin:0; 
+    padding:0;
+    }
+ul,li,ol{
+    list-style:none;
+    }
+img,fieldset{
+    border:0;
+    }
+img{
+    display:block;
+    }
+a{
+    text-decoration:none; color:#333;
+    }
+h1,h2,h3,h4,h5,h6{
+    font-weight:100;
+    }
+body{
+     font-family:"微软雅黑";
+     font-size: 12px;
+     
+     }
+input,a{
+    outline:none;
+    }
+body,html{
+    width:100%;
+    height: 100%;
+}
+em{
+    font-style: normal;
+}
+
+/*------------------------content---------------------------------------------*/
+
+.register_header {
+    width: 100%;
+    height: 120px;
+     border-bottom: 1px solid #ddd;
+    .header_content {
+        width: 1100px;
+        height: 120px;
+        padding: 30px 0;
+        margin: 0 auto;
+       
+        >div:nth-of-type(1){
+            width: 238.56px;
+            height: 60px;
+            float: left;
+              a{
+                  display: inline-block;
+              }    
+              span{
+                  display: inline-block ;
+              }
+        }
+        >div:nth-of-type(2){
+            width:105.56px;
+            height: 21px;
+            margin: 13px 5px 0 0;
+            float: right;
+            a{
+                color:#427fd2;
+                font-size: 16px;
+            }
+            span{
+                color:#666;
+                font-size: 14px;
+            }
+        }
+    }
+}
+/*-----------------------register--------------------------------------*/
+.register_content_wrap{
+    height: 586px;
+    border-bottom: 1px solid #ddd;
+    #register_btn{
+        background: #ededed;
+        width:416px;
+        height: 52px;
+        line-height: 52px;
+        margin: 15px 0 50px 326px;
+        display: inline-block;
+        color: #fff;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 20px;
+    }
+    #regform{
+        height: 586px;
+        .register_content{
+            width:1100px;
+            padding-top: 55px;
+            margin: 0 auto;
+            img{
+                position: absolute;
+                right:-40px;
+                top:18px;
+                display: none;
+            }
+            input{
+               
+                height: 52px;
+                border-radius: 5px;
+                color:#999;
+                text-indent: 16px;
+                font-size: 14px;
+                border: 1px solid #ddd;
+                padding: 0;
+            }
+            span{
+                width:96px;
+                text-align: right;
+                display: inline-block;
+                font-size: 16px;
+            }
+            >div{
+                 width:516px;
+                height: 54px;
+                margin-bottom: 10px;
+                margin-left: 228px;
+            }
+            
+            .register_phone,.register_confirmpw,.register_password,.register_username{               
+                position: relative;
+                input{
+                    width:413px;
+                }
+            }
+            .phone_error,.verify_error,.note_error,.username_error,.password_error,.confirmpw_error{
+                position: absolute;
+                display: none;
+                width: 150px;
+                padding:  0 10px;
+                line-height: 54px;
+                background: #fff3d9;
+                color: #ff6f4a;
+                height: 54px;
+                right:-190px;
+                border-radius: 5px;           
+                span{
+                    text-align: left;
+                    display: block;
+                    width: 140px;
+                    font-size: 14px;
+                     height: 19px;
+                }
+                
+            }
+            .register_verify{   
+                 position: relative;
+                >span{
+                    margin-top: 15px;
+                    float: left;
+                }             
+                input{
+                    margin-left: 3px;
+                    float: left;
+                    width:203px;
+                    margin-right: 5px;
+                }
+                .register_verifycode{
+                    display: inline-block;
+                    float: left;
+                    margin-left: 3px;
+                    width:200px;
+                    border: 1px solid #DDDDDD;
+                    border-radius: 5px;
+                    height: 52px;
+                    line-height: 52px;
+                 //   position: relative;
+                    >span{
+                        float: left;
+                        width:100px;
+                        height: 52px;
+                        background: #33cb98;
+                        line-height: 52px;
+                        text-align: center;
+                        font-size: 30px;
+                        color: #fff;
+                        font-family: "bookman old style";
+                       
+                    }
+                   >a{  
+                       cursor: pointer;
+                       position: relative;
+                       
+                        img{
+                            position: absolute;
+                            display: inline-block;
+                            top:19px;
+                            left: 10px;
+                        }
+                        font-size:14px; 
+                        float:left;
+                        width:100px;
+                        height: 52px;
+                        &:hover{
+                            color:#248DCC;
+                        }
+                        text-align: center;
+                        color: #999 ;                        
+                    }
+                }
+            }
+            .register_note{
+                position: relative;
+                    input{
+                        width:255px;
+                    }
+                    a{
+                        &:hover{
+                            background: #33cb98;
+                            span{
+                                color: #fff;
+                            }
+                        }
+                        cursor: pointer;
+                        margin-left: 3px;
+                        width:149px;
+                        display: inline-block;
+                        height: 52px;
+                        border: 1px solid #ddd;
+                        border-radius: 5px;
+                        line-height: 52px;
+                        span{
+                            width: 149px;
+                            text-align: center;
+                            color: #999;
+                            line-height: 52px;
+                            font-size: 14px;
+                        }
+                    }
+            }
+            .register_agreement{
+                padding-left: 97px;
+                margin-bottom: 10px;
+                width: 416px;
+                height: 20px;
+                input{
+                    width: 13px;
+                    height: 13px;
+                }
+                span{
+                    width: auto;
+                    color: #333333;
+                    line-height: 20px;
+                    font-size: 14px;
+                }
+            }                     
+        }
+    }
+}
+/*------------------------------------footer-------------------------------------------*/
+#register_footer{
+    width: 100%;
+    height: 177px;
+    .register_footer_content{
+        width: 820px;
+        height: 37px;
+        margin: 0 auto;
+        padding: 70px 0;
+        text-align: center;
+        a{
+            color: #999;
+            
+        }
+        p{
+            margin-top: 5px;
+            text-align: center;
+            color: #999;
+        }
+    }
+}

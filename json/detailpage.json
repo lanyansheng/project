@@ -1,0 +1,38 @@
+{
+	"list1":[{
+		"bigimg_src":"detailpage_bigimg_1.jpg",
+		"smallimg_src":"detailpage_smallimg_1.jpg",
+		"title":"顽皮Wanpy 奶酪小馒头 220g",
+		"introduce":"Happy零食系列 ",
+		"market_price":"14.40",
+		"price":"¥12.00",
+		"data_id":"0067"
+	},{
+		"bigimg_src":"detailpage_bigimg_2.jpg",
+		"smallimg_src":"detailpage_smallimg_2.jpg"
+	},{
+		"bigimg_src":"detailpage_bigimg_3.jpg",
+		"smallimg_src":"detailpage_smallimg_3.jpg"
+	},{
+		"bigimg_src":"detailpage_bigimg_4.jpg",
+		"smallimg_src":"detailpage_smallimg_4.jpg"
+	}],
+	"list2":[{
+		"bigimg_src":"detailpage2_bigimg_1.jpg",
+		"smallimg_src":"detailpage2_smallimg_1.jpg",
+		"title":"顽皮Wanpy 牛肉配方 狗罐头 375g*12罐",
+		"introduce":"Happy100湿粮系列 低脂高蛋白 增强免疫力",
+		"market_price":"99.36",
+		"price":"¥82.80",
+		"data_id":"0067"
+	},{
+		"bigimg_src":"detailpage2_bigimg_2.jpg",
+		"smallimg_src":"detailpage2_smallimg_2.jpg"
+	},{
+		"bigimg_src":"detailpage2_bigimg_3.jpg",
+		"smallimg_src":"detailpage2_smallimg_3.jpg"
+	},{
+		"bigimg_src":"detailpage2_bigimg_4.jpg",
+		"smallimg_src":"detailpage2_smallimg_4.jpg"
+	}]
+}
