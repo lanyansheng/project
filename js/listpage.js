@@ -2,8 +2,32 @@
 
 
 $(function(){
-	var username = location.search;
-		var  usernames= username.split("=")[1];
+		var username = location.search;
+		var  usernames=username.split("=")[1];
+	if(getCookie("userId")){
+		var obj = JSON.parse(getCookie("userId"));
+		usernames = obj["usernames"] ;	
+	}	
+		if(usernames != "undefined"){	
+			$usernames = decodeURI(usernames);
+			$("#username_1").text($usernames);
+			$(".suspend_personal_hide div").html("尊敬的 "+$usernames+" ,您好");
+			$(".online_server_hide div").html("尊敬的 "+$usernames+" ,您好");
+			$(".suspend_text_hide div").html("尊敬的 "+$usernames+" ,您好");
+		}	
+		if(getCookie("userId")) {
+				var obj = JSON.parse(getCookie("userId"));
+				obj["usernames"] = usernames ;
+				var str = JSON.stringify(obj);
+				setCookie("userId",str,7) ; 
+			} else {
+				var obj = {};
+				obj["usernames"] = usernames ;
+				var str = JSON.stringify(obj);
+				setCookie("userId",str,7) ;
+			}
+			
+	/*-----------------------------------------------------------------------*/		
 	$.ajax({
 		type:"get",
 		url:"json/list_page.json",
@@ -14,7 +38,7 @@ $(function(){
 			console.log(data);
 			for(var i in data){
 				arr.push(data[i]);
-				str += "<div class='listpage_detail'><a href='detailpage.html?id="+data[i][0].data_id+"'><img class='big_img' src='img/"+data[i][0].bigimg_src+"'></a><div>";
+				str += "<div class='listpage_detail'><a href='detailpage.html?id="+data[i][0].data_id+"&username="+usernames+"'><img class='big_img' src='img/"+data[i][0].bigimg_src+"'></a><div>";
 				for(var j = 0 ; j < data[i].length ; j++){
 					str += "<img class='hover_change' src='img/"+data[i][j].smallimg_src+"'>" ; 
 				}
@@ -66,7 +90,7 @@ $(function(){
 					}	
 				}				
 			}
-			str1 +="<a href='cart.html'>立即结算!</a>" ;
+			str1 +="<a href='cart.html?usernames="+usernames+"'>立即结算!</a>" ;
 			$("#cartbox").html(str1);
 		//	$(".suspend_cart_num span").html(count);
 		$(".cart_goods_num").html(count);
@@ -128,8 +152,10 @@ $(function(){
 		$("html,body").animate({"scrollTop":0},1000);
 	})
 	/*-------------------------------登录---------------------------*/
-	if(usernames !=""){	
-		$("#username_1").text(usernames);
-	}
-	
+//	if(usernames !=undefined){	
+//		$("#username_1").text(usernames);
+//	}
+	$(".shopping_cart").click(function(){
+			location.href = "cart.html";
+		})
 });

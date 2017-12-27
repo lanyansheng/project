@@ -211,9 +211,12 @@ em {
         top: 50px;
         background: #fff;
         display: none;
+        z-index: 999;
         overflow: hidden; }
         .headerNav .header .search .search_form .search_list li {
+          background: #fff;
           border: 1px solid;
+          border-bottom: none;
           width: 100%; }
       .headerNav .header .search .search_form input:nth-of-type(2) {
         cursor: pointer;
@@ -245,6 +248,7 @@ em {
       position: absolute;
       background: url(../img/phonecode.png); }
     .headerNav .header .shopping_cart {
+      cursor: pointer;
       line-height: 39px;
       text-align: center;
       position: absolute;
@@ -252,7 +256,12 @@ em {
       right: 40px;
       width: 130px;
       height: 39px;
-      background: url(../img/shopping-cart.gif) no-repeat; }
+      background: url(../img/shopping-cart.gif) no-repeat;
+      padding-left: 15px;
+      font-size: 14px; }
+      .headerNav .header .shopping_cart .cart_goods_num, .headerNav .header .shopping_cart .goods_kind {
+        font-size: 14px;
+        color: orangered; }
   .headerNav .nav {
     padding-top: 9px;
     height: 35px;
@@ -308,6 +317,9 @@ em {
       height: 360px;
       background: #fff;
       display: none; }
+      .headerNav .nav ul .dog_dog img {
+        position: absolute;
+        opacity: 0; }
     .headerNav .nav ul .data_list_detail {
       display: none;
       z-index: 100;

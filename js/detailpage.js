@@ -22,6 +22,21 @@
 $(function(){
 	var idnum = location.search;
 	var proId = idnum.split("=")[1];
+	var proId = proId.split("&")[0];
+	//var  usernames=idnum.split("=")[1];
+	var usernames ;
+	if(getCookie("userId")){
+		var obj = JSON.parse(getCookie("userId"));
+		usernames = obj["usernames"] ;
+		console.log(usernames);
+	}	
+		if(usernames != "undefined"){	
+			$usernames = decodeURI(usernames);
+			$("#username_1").text($usernames);
+			$(".suspend_personal_hide div").html("尊敬的 "+$usernames+" ,您好");
+			$(".online_server_hide div").html("尊敬的 "+$usernames+" ,您好");
+			$(".suspend_text_hide div").html("尊敬的 "+$usernames+" ,您好");
+		}
 	console.log(proId);
 	var count = 0 ;
 	$.ajax({
@@ -89,7 +104,7 @@ $(function(){
 					}	
 				}				
 			}
-			str1 +="<a href=''>立即结算!</a>" ;
+			str1 +="<a href='cart.html'>立即结算!</a>" ;
 			$("#cartbox").html(str1);
 			$(".suspend_cart_num span").html(count);
 			$(".cart_goods_num").html(count);	
@@ -172,5 +187,7 @@ $(function(){
 		}
 		$(".goods_num").val(--num);			
 	})	
-	
+	$(".shopping_cart").click(function(){
+			location.href = "cart.html";
+		})
 });	

@@ -107,6 +107,8 @@ $(function(){
 		$.getJSON("http://datainfo.duapp.com/shopdata/userinfo.php",{status:"register",userID:$("#username").val(),password:$("#password").val()},function(data){
 			if(data == 1){
 				location.href = "login.html" ;
+			}else if (data == 0){
+				alert("用户名重名");
 			}
 		})
 	})

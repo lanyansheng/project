@@ -1,5 +1,26 @@
 
 $(function() {
+	var usernames ;
+	if(getCookie("userId")){
+		var obj = JSON.parse(getCookie("userId"));
+		usernames = obj["usernames"] ;	
+	}
+	if(usernames != "undefined"){	
+			$usernames = decodeURI(usernames);
+			$("#username_1").text($usernames);			
+		}
+	
+	if(getCookie("userCart")){
+		var obj = JSON.parse(getCookie("userCart"));
+		var obj1 = JSON.parse(getCookie("cart"));
+		obj[usernames] = obj1 ;		
+	}else{
+		var obj = {};
+		var obj1 = JSON.parse(getCookie("cart"));
+		obj[usernames] = obj1 ;
+		var str = JSON.stringify(obj);
+		setCookie("userCart",str,7);
+	}
 	$.ajax({
 		type: "get",
 		url: "json/list_page.json",
@@ -27,7 +48,7 @@ $(function() {
 						one_price =arr[j].price.split("¥")[1];
 						
 						total_price += one_price*Number(obj[i]) ; 
-						str += "<li data_id='"+arr[j].data_id+"'><input type='checkbox' class='checked' checked='checked'><img src='img/"+arr[j].smallimg_src+"'><a><p>"+arr[j].title+"</p></a><div   data_id='"+arr[j].data_id+"'><span class='reduce_number'>-</span><input type='text'  value='"+obj[i]+"'><span class='add_number'>+</span></div><p>"+arr[j].price+"</p><a class='remove_goods' data_id='"+arr[j].data_id+"'>[删除]</a></li>"
+						str += "<li data_id='"+arr[j].data_id+"'><input type='checkbox' class='checked' checked='checked'><img src='img/"+arr[j].smallimg_src+"'><a href = 'detailpage.html?id="+arr[j].data_id+"'><p>"+arr[j].title+"</p></a><div   data_id='"+arr[j].data_id+"'><span class='reduce_number'>-</span><input type='text'  value='"+obj[i]+"'><span class='add_number'>+</span></div><p>"+arr[j].price+"</p><a class='remove_goods' data_id='"+arr[j].data_id+"'>[删除]</a></li>"
 					}
 				}
 			}

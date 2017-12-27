@@ -227,6 +227,9 @@ em {
             #login_content_wrap .login_content .login_area .login_partner .login_net div > a:nth-of-type(3) {
               background: url(../img/ico.png) no-repeat 0 -170px; }
 
+#login_btn {
+  cursor: pointer; }
+
 /*------------------------------------footer-------------------------------------------*/
 #register_footer {
   width: 100%;

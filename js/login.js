@@ -47,9 +47,14 @@ random();
 /*--------------------------后台-------------------------------------------*/
 
 		$("#login_btn").click(function(){
-			$.getJSON("http://datainfo.duapp.com/shopdata/userinfo.php",{status:"login",userID:$("#login_phone").val(),password:$("#login_password").val()},function(data){
-				if(data[1] == $("#login_phone").val()){
+			$.getJSON("http://datainfo.duapp.com/shopdata/userinfo.php",{status:"login",userID:$("#login_phone").val(),password:$("#login_password").val()},function(data){				
+				console.log(data);
+				if(data[1] == $("#login_phone").val() && $("#login_phone").val() != ""){
 					location.href = "home.html?username="+$("#login_phone").val()+"" ;
+				}else if (data == 0){
+					alert("用户名不存在");
+				}else{
+					alert("用户名密码不符");
 				}
 			})
 		})
